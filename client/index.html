@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Show Info</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./src/main.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>TV Show Info Finder</h1>
+      <p>
+        Enter a TV show's name to find its return date and where to watch it in
+        the UK.
+      </p>
+
+      <!-- Input and Button -->
+      <div>
+        <input type="text" id="seriesInput" placeholder="e.g., The Crown" />
+        <button id="searchButton">Search</button>
+      </div>
+
+      <!-- Results Display -->
+      <div id="results">
+        <p id="placeholder">Information will appear here.</p>
+        <div id="loading" class="hidden flex flex-col items-center">
+          <div
+            class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500 mb-2"
+          ></div>
+          <span>Searching...</span>
+        </div>
+        <div
+          id="content"
+          class="hidden w-full transition-opacity duration-300 ease-in-out opacity-0"
+        >
+          <!-- Content will be dynamically added here -->
+        </div>
+        <div
+          id="error"
+          class="hidden text-red-500 text-center p-4 rounded-lg bg-red-50"
+        >
+          <!-- Error messages will be added here -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
