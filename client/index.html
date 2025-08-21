@@ -20,32 +20,27 @@
       </p>
 
       <!-- Input and Button -->
-      <div>
-        <input type="text" id="seriesInput" placeholder="e.g., The Crown" />
+      <form>
+        <input
+          type="text"
+          id="seriesInput"
+          placeholder="e.g., The Crown"
+          name="seriesName"
+        />
         <button id="searchButton">Search</button>
-      </div>
+      </form>
 
       <!-- Results Display -->
       <div id="results">
         <p id="placeholder">Information will appear here.</p>
-        <div id="loading" class="hidden flex flex-col items-center">
-          <div
-            class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-indigo-500 mb-2"
-          ></div>
+        <div id="loading">
+          <div></div>
           <span>Searching...</span>
         </div>
-        <div
-          id="content"
-          class="hidden w-full transition-opacity duration-300 ease-in-out opacity-0"
-        >
+        <div id="content">
           <!-- Content will be dynamically added here -->
         </div>
-        <div
-          id="error"
-          class="hidden text-red-500 text-center p-4 rounded-lg bg-red-50"
-        >
-          <!-- Error messages will be added here -->
-        </div>
+        <div id="error"></div>
       </div>
     </div>
   </body>

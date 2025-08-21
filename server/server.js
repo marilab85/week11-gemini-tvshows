@@ -23,12 +23,12 @@ app.post("/chat", async function (req, res) {
   if (!prompt) {
     res.json("No prompt given");
   } else {
+    const craftedPrompt = `Provide the return date and UK streaming service for the TV show "${prompt}". Format the response as a JSON object with properties 'seriesTitle', 'returnDate', and 'ukStreamingService'. The 'returnDate' should be "Not yet announced" if it is unknown. The 'ukStreamingService' should be a single string containing the primary platform(s) (e.g., "Netflix", "BBC iPlayer", or "Disney+ and Hulu"). Do not include any other text or formatting.`;
     const geminiResponse = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       contents: prompt,
       config: {
-        systemInstruction:
-          "You are a very helpful assistant. Start off every single reply with 'Howdy doodah, have a rootin' tootin' time' and then proceed with your answer.",
+        systemInstruction: "you are a helpful assistant",
       },
     });
 
